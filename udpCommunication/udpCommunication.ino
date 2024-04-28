@@ -20,6 +20,28 @@ void setup() {
 
   udp.begin(localPort);
   Serial.printf("UDP Client : %s:%i \n", WiFi.localIP().toString().c_str(), localPort);
+
+  udp.beginPacket(serverip, serverport);
+  char buf[30];
+  // unsigned long testID = millis();sa
+  sprintf(buf, "50");
+  udp.printf(buf);
+  udp.endPacket();
+  delay(1000);
+    udp.beginPacket(serverip, serverport);
+  // char buf[30];
+  // unsigned long testID = millis();
+  sprintf(buf, "70");
+  udp.printf(buf);
+  udp.endPacket();
+  delay(1000);
+    udp.beginPacket(serverip, serverport);
+  // char buf[30];
+  // unsigned long testID = millis();
+  sprintf(buf, "90");
+  udp.printf(buf);
+  udp.endPacket();
+  delay(1000);
 }
 
 void loop() {
@@ -67,11 +89,11 @@ void loop() {
   }
   delay(250);
   Serial.print("[Client Connected] "); Serial.println(WiFi.localIP());
-  udp.beginPacket(serverip, serverport);
-  char buf[30];
-  unsigned long testID = millis();
-  sprintf(buf, "ESP8266 send millis: %lu", testID);
-  udp.printf(buf);
-  udp.endPacket();
+  // udp.beginPacket(serverip, serverport);
+  // char buf[30];
+  // unsigned long testID = millis();
+  // sprintf(buf, "ESP8266 send millis: %lu", testID);
+  // udp.printf(buf);
+  // udp.endPacket();
 
 }

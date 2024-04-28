@@ -65,6 +65,14 @@ void setup() {
   udp.begin(localPort);
   Serial.printf("UDP Client : %s:%i \n", WiFi.localIP().toString().c_str(), localPort);
 
+  // Registering to System
+  udp.beginPacket(serverip, serverport);
+  char buf[30];
+  sprintf(buf, "50");
+  udp.printf(buf);
+  udp.endPacket();
+  delay(1000);
+
 }
 
 void loop() {

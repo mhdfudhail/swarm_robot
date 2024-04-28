@@ -1,12 +1,12 @@
 const int trig = D2;
 const int echo = D3;
 
-const int En1 = D8;
-const int En2 = D7;
-const int In1 = D6;
+const int En1 = D7;
+const int En2 = D8;
+const int In1 = D1;
 const int In2 = D0;
 const int In3 = D5;
-const int In4 = D1;
+const int In4 = D6;
 
 
 void setup() {
@@ -53,8 +53,8 @@ void loop() {
 }
 
 void Forward() 
-{ analogWrite(En1, 100);
-  analogWrite(En2, 100);
+{ analogWrite(En1, 250);
+  analogWrite(En2, 250);
   digitalWrite(In1,LOW);
   digitalWrite(In2,HIGH);                       
   digitalWrite(In3,LOW);
@@ -63,16 +63,16 @@ void Forward()
 
 void Backward() 
 {
-  analogWrite(En1, 80);
-  analogWrite(En2, 80);
+  analogWrite(En1, 250);
+  analogWrite(En2, 250);
   digitalWrite(In1,HIGH);
   digitalWrite(In2,LOW);                         
   digitalWrite(In3,HIGH);
   digitalWrite(In4,LOW);
 } 
 void TurnRight() 
-{ analogWrite(En1, 130);
-  analogWrite(En2, 130);
+{ analogWrite(En1, 230);
+  analogWrite(En2, 230);
   digitalWrite(In1, LOW);
   digitalWrite(In2, HIGH);
   digitalWrite(In3, HIGH);

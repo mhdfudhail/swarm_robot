@@ -23,7 +23,7 @@ def main():
     while True:
         data, addr = sock.recvfrom(1024) # get data
         print("received message: {} from {}\n".format(data,addr))
-        message = "12.9748,1.48436"
+        message = "12.9748,1.48436,-1,10"
         # sock.sendto(str("RPi received OK"),addr)
         sock.sendto(message.encode(),addr)
 
